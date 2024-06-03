@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - assertSame
+  - assertArrayEquals
+  - assertEquals
+  - assertDoesNotThrow
+  - fail
+options:
+  - Checks that execution of the supplied argument does not throw any exception.
+  - Checks that the two supplied arguments refer to the same object.
+  - Fails the test.
+  - Checks that the two supplied arguments are equal.
+  - Checks that the two supplied arrays are deeply equal.
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12642#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
