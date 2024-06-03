@@ -1,0 +1,17 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: TextFile.class.isInstance(img)
+  - text: ImageFile.class.isInstance(file)
+  - text: File.class.isInstance(img)
+  - text: TextFile.class.isInstance(txt)
+  - text: ImageFile.class.isInstance(img)
+  - text: File.class.isInstance(file)
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3077#comment
+status: Solved
+record: -1
+local_check: false
