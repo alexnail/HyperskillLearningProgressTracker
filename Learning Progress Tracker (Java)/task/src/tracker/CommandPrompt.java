@@ -11,10 +11,11 @@ public class CommandPrompt {
     }
 
     public Command getCommand() {
-        //System.out.println("> ");
         String input = scanner.nextLine().trim();
         return switch (input) {
             case "exit" -> new ExitCommand();
+            case "back" -> new BackCommand();
+            case "add students" -> new AddStudentsCommand(scanner);
             case "" -> () -> {
                 System.out.println("No input.");
                 return false;
