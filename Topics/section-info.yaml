@@ -1,2 +1,4 @@
 content:
   - Unit testing with JUnit
+  - Multiple constructors
+  - Static members
