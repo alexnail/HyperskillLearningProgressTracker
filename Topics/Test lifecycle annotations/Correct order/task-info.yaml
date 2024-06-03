@@ -1,0 +1,20 @@
+type: sorting
+options:
+  - second() // 2
+  - third() // 3
+  - first() // 1
+  - fourth() // 4
+  - fifth() // 5
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12873#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4

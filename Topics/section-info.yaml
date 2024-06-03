@@ -3,3 +3,4 @@ content:
   - Multiple constructors
   - Static members
   - Runtime type checking
+  - Test lifecycle annotations
