@@ -4,3 +4,4 @@ content:
   - Static members
   - Runtime type checking
   - Test lifecycle annotations
+  - Anonymous class
