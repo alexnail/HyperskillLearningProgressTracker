@@ -5,3 +5,4 @@ content:
   - Runtime type checking
   - Test lifecycle annotations
   - Anonymous class
+  - Parameterized test
