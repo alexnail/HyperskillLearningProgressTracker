@@ -6,3 +6,4 @@ content:
   - Test lifecycle annotations
   - Anonymous class
   - Parameterized test
+  - LinkedList vs. ArrayList
