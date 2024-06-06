@@ -1,0 +1,29 @@
+type: matching
+captions:
+  - ArrayList internal organization is
+  - LinkedList internal organization is
+  - ArrayList is great for
+  - LinkedList is great for
+  - 'ArrayList nightmare is '
+  - 'LinkedList nightmare is '
+options:
+  - getting elements especially in the middle of the list.
+  - getting and setting elements by index.
+  - ' putting elements in most situations.'
+  - resizable array of objects.
+  - doubly-linked list.
+  - inserting elements not in the end of the list.
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12396#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5

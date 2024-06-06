@@ -1,0 +1,18 @@
+type: sorting
+options:
+  - A new array with a bigger size is created.
+  - The new element is placed at a specific index.
+  - All subsequent elements are moved if needed.
+  - All existing elements are copied to the new array.
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12394#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2
+  - 3
