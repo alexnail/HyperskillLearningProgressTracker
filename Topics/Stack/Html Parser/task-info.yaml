@@ -1,0 +1,18 @@
+type: code
+files:
+  - name: src/Main.java
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/3658#comment
+status: Failed
+feedback:
+  message: "Failed test #1 of 8. Runtime error\n\nThis is a sample test from the problem\
+    \ statement!\n\nTest input:\n<html><a>hello</a><h1><h4>nestedHello</h4><h3>nestedWorld</h3><h6><br>top</br></h6></h1><br>world</br></html>\n\
+    Correct output:\nhello\nnestedHello\nnestedWorld\ntop\n<br>top</br>\n<h4>nestedHello</h4><h3>nestedWorld</h3><h6><br>top</br></h6>\n\
+    world\n<a>hello</a><h1><h4>nestedHello</h4><h3>nestedWorld</h3><h6><br>top</br></h6></h1><br>world</br>\n\
+    \nYour code output:\n\n\nError:\nException in thread \"main\" java.lang.StringIndexOutOfBoundsException:\
+    \ begin 6, end -1, length 109\n\tat java.base/java.lang.String.checkBoundsBeginEnd(String.java:4601)\n\
+    \tat java.base/java.lang.String.substring(String.java:2704)\n\tat Main.main(Main.java:31)\n"
+  time: "Thu, 13 Jun 2024 21:34:02 UTC"
+record: -1
+submission_language: java17
