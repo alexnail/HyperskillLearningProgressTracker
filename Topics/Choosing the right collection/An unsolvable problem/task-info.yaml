@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: 'get upset or angry '
+  - text: try to use several collections to solve this
+  - text: find a suitable collection in an external library
+  - text: define a new collection based on the existing ones
+  - text: refuse to solve the problem
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12860#comment
+status: Solved
+record: -1
+local_check: false
