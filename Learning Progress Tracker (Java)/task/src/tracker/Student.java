@@ -1,12 +1,16 @@
 package tracker;
 
+import java.util.UUID;
+
 public class Student {
+    private String id;
     private String firstName;
     private String lastName;
     private String email;
 
     public static Student fromString(String input) {
         Student student = new Student();
+        student.id = UUID.randomUUID().toString();
         student.firstName = input.substring(0, input.indexOf(" "));
         student.lastName = input.substring(input.indexOf(" ") + 1, input.lastIndexOf(" "));
         student.email = input.substring(input.lastIndexOf(" ") + 1);
@@ -39,5 +43,9 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getId() {
+        return id;
     }
 }

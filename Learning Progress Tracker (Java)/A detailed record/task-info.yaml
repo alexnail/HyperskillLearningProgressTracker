@@ -39,6 +39,18 @@ files:
   - name: src/tracker/Command.java
     visible: true
     learner_created: true
+  - name: src/tracker/StudentDAO.java
+    visible: true
+    learner_created: true
+  - name: src/tracker/InMemoryStudentDAO.java
+    visible: true
+    learner_created: true
+  - name: src/tracker/exceptions/DuplicateEmailException.java
+    visible: true
+    learner_created: true
+  - name: test/tracker/AddStudentsCommandTest.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/14398#comment
 status: Unchecked
 record: -1
