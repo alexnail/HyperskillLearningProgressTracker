@@ -30,7 +30,7 @@ public class InMemoryStudentDAO implements StudentDAO {
     }
 
     @Override
-    public Map<String, Student> getAll() {
+    public Map<String, Student> findAll() {
         return students;
     }
 
@@ -40,7 +40,7 @@ public class InMemoryStudentDAO implements StudentDAO {
     }
 
     @Override
-    public Student get(String studentId) {
+    public Student find(String studentId) {
         return students.get(studentId);
     }
 

@@ -5,7 +5,7 @@ import java.util.Map;
 public class ListStudentsCommand implements Command {
     @Override
     public boolean execute() {
-        Map<String, Student> students = InMemoryStudentDAO.dao().getAll();
+        Map<String, Student> students = InMemoryStudentDAO.dao().findAll();
         if (students.isEmpty()) {
             System.out.println("No students found");
         } else {

@@ -22,6 +22,10 @@ public class AddPointsCommand implements Command {
                 return false;
             }
             String[] split = input.split("\\s");
+            if (split.length != 5) {
+                System.out.println("Incorrect points format.");
+                continue;
+            }
             String studentId = split[0];
 
             try {
@@ -32,7 +36,7 @@ public class AddPointsCommand implements Command {
                 if (Stream.of(java, dsa, dbs, spring).anyMatch(i -> i < 0 )) {
                     throw new NumberFormatException();
                 }
-                Student student = dao.get(studentId);
+                Student student = dao.find(studentId);
                 if (student == null) {
                     System.out.printf("No student is found for id=%s.%n", studentId);
                     continue;

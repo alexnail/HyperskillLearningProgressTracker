@@ -8,11 +8,11 @@ public interface StudentDAO {
 
     Student save(Student student) throws DuplicateEmailException;
 
-    Map<String, Student> getAll();
+    Map<String, Student> findAll();
 
     int size();
 
-    Student get(String studentId);
+    Student find(String studentId);
 
     Student update(Student student);
 }

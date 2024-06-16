@@ -63,6 +63,72 @@ files:
   - name: src/tracker/Points.java
     visible: true
     learner_created: true
+  - name: src/tracker/FindCommand.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/14398#comment
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Wrong answer in test #26
+
+    Expected output: 0c4ed92e-ad9b-4a14-a0bc-8af0715a71d4 points: Java=2; DSA=2; Databases=2; Spring=2, but your output was: 0c4ed92e-ad9b-4a14-a0bc-8af0715a71d4 points: Java=1; DSA=1; Databases=1; Spring=1
+
+    Please find below the output of your program during this failed test.
+    Note that the &#39;&gt;&#39; character indicates the beginning of the input line.
+
+    ---
+
+    Learning Progress Tracker
+    &gt; add students
+    Enter student credentials or &#39;back&#39; to return:
+    &gt; Gwenette Anagnos address1@mail.com
+    The student has been added.
+    &gt; Natka Herculie address2@mail.com
+    The student has been added.
+    &gt; Emelia Annnora address3@mail.com
+    The student has been added.
+    &gt; Carmella Campman address4@mail.com
+    The student has been added.
+    &gt; Alexina Belcher address5@mail.com
+    The student has been added.
+    &gt; back
+    Total 5 students have been added.
+    &gt; list
+    Students:
+    8dace0ac-5cc0-485e-b651-dfaf12880984
+    0c4ed92e-ad9b-4a14-a0bc-8af0715a71d4
+    88c8bbdc-e3c7-4024-8817-13bad0ad44cb
+    4e1db38d-77f7-429e-9555-4e1a071d8e85
+    a55eda17-8f03-4146-b669-9722107ac1df
+    &gt; add points
+    Enter an id and points or &#39;back&#39; to return:
+    &gt; 8dace0ac-5cc0-485e-b651-dfaf12880984 0 0 0 0
+    Points updated.
+    &gt; 8dace0ac-5cc0-485e-b651-dfaf12880984 0 0 0 0
+    Points updated.
+    &gt; 0c4ed92e-ad9b-4a14-a0bc-8af0715a71d4 1 1 1 1
+    Points updated.
+    &gt; 0c4ed92e-ad9b-4a14-a0bc-8af0715a71d4 1 1 1 1
+    Points updated.
+    &gt; 88c8bbdc-e3c7-4024-8817-13bad0ad44cb 2 2 2 2
+    Points updated.
+    &gt; 88c8bbdc-e3c7-4024-8817-13bad0ad44cb 2 2 2 2
+    Points updated.
+    &gt; 4e1db38d-77f7-429e-9555-4e1a071d8e85 3 3 3 3
+    Points updated.
+    &gt; 4e1db38d-77f7-429e-9555-4e1a071d8e85 3 3 3 3
+    Points updated.
+    &gt; a55eda17-8f03-4146-b669-9722107ac1df 4 4 4 4
+    Points updated.
+    &gt; a55eda17-8f03-4146-b669-9722107ac1df 4 4 4 4
+    Points updated.
+    &gt; back
+    &gt; find
+    Enter an id or &#39;back&#39; to return:
+    &gt; 8dace0ac-5cc0-485e-b651-dfaf12880984
+    8dace0ac-5cc0-485e-b651-dfaf12880984 points: Java=0; DSA=0; Databases=0; Spring=0
+    &gt; 0c4ed92e-ad9b-4a14-a0bc-8af0715a71d4
+    0c4ed92e-ad9b-4a14-a0bc-8af0715a71d4 points: Java=1; DSA=1; Databases=1; Spring=1
+  time: "Sun, 16 Jun 2024 12:39:37 UTC"
 record: -1

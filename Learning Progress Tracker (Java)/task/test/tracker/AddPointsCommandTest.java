@@ -45,7 +45,7 @@ class AddPointsCommandTest {
 
         command.execute();
 
-        Map<String, Student> students = dao.getAll();
+        Map<String, Student> students = dao.findAll();
         assertThat(students.get("10000").getPoints().java()).isEqualTo(7);
         assertThat(students.get("10000").getPoints().dsa()).isEqualTo(7);
         assertThat(students.get("10000").getPoints().dbs()).isEqualTo(7);
