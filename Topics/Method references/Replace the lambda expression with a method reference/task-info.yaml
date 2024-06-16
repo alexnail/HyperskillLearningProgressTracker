@@ -1,0 +1,17 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: s::toUpperCase;
+  - text: String.toUpperCase;
+  - text: s::toUpperCase();
+  - text: String::toUpperCase();
+  - text: s.toUpperCase;
+  - text: String::toUpperCase;
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2375#comment
+status: Solved
+record: -1
+local_check: false

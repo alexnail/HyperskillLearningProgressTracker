@@ -1,0 +1,17 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: a constructor
+  - text: an instance method of a particular object
+  - text: an instance method of an arbitrary object of a particular type
+  - text: a static method
+  - text: a class
+  - text: a static method of a class through an instance of the class
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3344#comment
+status: Solved
+record: -1
+local_check: false
