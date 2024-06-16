@@ -16,6 +16,7 @@ public class CommandPrompt {
             case "exit" -> new ExitCommand();
             case "back" -> new BackCommand();
             case "add students" -> new AddStudentsCommand(scanner);
+            case "list" -> new ListStudentsCommand();
             case "" -> () -> {
                 System.out.println("No input.");
                 return false;

@@ -30,6 +30,11 @@ public class InMemoryStudentDAO implements StudentDAO {
     }
 
     @Override
+    public Map<String, Student> getAll() {
+        return students;
+    }
+
+    @Override
     public int size() {
         return students.size();
     }
