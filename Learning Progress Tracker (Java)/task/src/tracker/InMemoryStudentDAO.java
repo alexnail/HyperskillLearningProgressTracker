@@ -48,4 +48,9 @@ public class InMemoryStudentDAO implements StudentDAO {
     public Student update(Student student) {
         return students.put(student.getId(), student);
     }
+
+    @Override
+    public void reset() {
+        students.clear();
+    }
 }

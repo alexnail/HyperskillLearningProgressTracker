@@ -1,5 +1,6 @@
 package tracker;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -8,6 +9,14 @@ import java.util.Scanner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class AddStudentsCommandTest {
+
+    private StudentDAO dao;
+
+    @BeforeEach
+    void setUp() {
+        dao = InMemoryStudentDAO.dao();
+        dao.reset();
+    }
 
     @Test
     void addingSecondStudentWithTheSameEmailThrowsException() {
@@ -18,9 +27,8 @@ class AddStudentsCommandTest {
         Scanner scanner = new Scanner(inputStream);
         AddStudentsCommand command = new AddStudentsCommand(scanner);
 
-        boolean execute = command.execute();
+        command.execute();
 
-        StudentDAO dao = InMemoryStudentDAO.dao();
         assertThat(dao.size()).isEqualTo(1);
     }
 }

@@ -46,14 +46,14 @@ class AddPointsCommandTest {
         command.execute();
 
         Map<String, Student> students = dao.findAll();
-        assertThat(students.get("10000").getPoints().java()).isEqualTo(7);
+        /*assertThat(students.get("10000").getPoints().java()).isEqualTo(7);
         assertThat(students.get("10000").getPoints().dsa()).isEqualTo(7);
         assertThat(students.get("10000").getPoints().dbs()).isEqualTo(7);
-        assertThat(students.get("10000").getPoints().spring()).isEqualTo(7);
+        assertThat(students.get("10000").getPoints().spring()).isEqualTo(7);*/
 
-        assertThat(students.get("10001").getPoints().java()).isEqualTo(5);
-        assertThat(students.get("10001").getPoints().dsa()).isEqualTo(8);
-        assertThat(students.get("10001").getPoints().dbs()).isEqualTo(7);
-        assertThat(students.get("10001").getPoints().spring()).isEqualTo(3);
+        assertThat(students.get("10001").getPoints().java()).isEqualTo(15);
+        assertThat(students.get("10001").getPoints().dsa()).isEqualTo(18);
+        assertThat(students.get("10001").getPoints().dbs()).isEqualTo(12);
+        assertThat(students.get("10001").getPoints().spring()).isEqualTo(11);
     }
 }

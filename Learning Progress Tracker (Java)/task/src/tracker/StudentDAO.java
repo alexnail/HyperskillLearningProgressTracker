@@ -15,4 +15,6 @@ public interface StudentDAO {
     Student find(String studentId);
 
     Student update(Student student);
+
+    void reset();
 }
