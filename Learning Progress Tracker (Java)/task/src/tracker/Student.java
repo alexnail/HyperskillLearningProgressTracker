@@ -7,6 +7,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private String email;
+    private Points points;
 
     public static Student fromString(String input) {
         Student student = new Student();
@@ -47,5 +48,17 @@ public class Student {
 
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setPoints(Points points) {
+        this.points = points;
+    }
+
+    public Points getPoints() {
+        return points;
     }
 }

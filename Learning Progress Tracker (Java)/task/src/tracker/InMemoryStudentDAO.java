@@ -38,4 +38,14 @@ public class InMemoryStudentDAO implements StudentDAO {
     public int size() {
         return students.size();
     }
+
+    @Override
+    public Student get(String studentId) {
+        return students.get(studentId);
+    }
+
+    @Override
+    public Student update(Student student) {
+        return students.put(student.getId(), student);
+    }
 }

@@ -11,4 +11,8 @@ public interface StudentDAO {
     Map<String, Student> getAll();
 
     int size();
+
+    Student get(String studentId);
+
+    Student update(Student student);
 }
