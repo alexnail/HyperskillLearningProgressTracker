@@ -5,3 +5,5 @@ content:
   - Non-abstract methods
   - Reverse sorting
   - Comparator vs Comparable
+  - Comparing numbers
+  - Multiple fields
