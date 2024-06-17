@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Declare a class that implements it and then create an object of this class
+  - text: Create a direct instance of this interface
+  - text: Use a lambda expression
+  - text: Use an anonymous class
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11689#comment
+status: Solved
+record: -1
+local_check: false
