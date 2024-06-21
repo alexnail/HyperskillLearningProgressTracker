@@ -263,7 +263,7 @@ Test 2
 After each test
 After the test fixture</code></pre>
 <p></p>
-<div class="alert alert-primary"><p>For the per test method <a class="theory-lookup not-relevant" href="/learn/step/12867" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a test instance refers to the creation of a new object of the test class for each test method. | This is also known as the per test method test instance lifecycle. This approach ensures that each test method starts with a clean slate and can reduce the risk of unexpected side effects due to shared state. It is useful when test methods rely on state stored in instance variables. JUnit5 constructs a new instance of the test class before executing each test method, and the test instance is shared among all test methods in the class.">test instance</a> lifecycle, remove the <code class="language-java">@TestInstance</code> annotation from your test class or explicitly use <code class="language-java">@TestInstance(TestInstance.Lifecycle.PER_METHOD)</code>.</p></div>
+<div class="alert alert-primary"><p>For the per test method test instance lifecycle, remove the <code class="language-java">@TestInstance</code> annotation from your test class or explicitly use <code class="language-java">@TestInstance(TestInstance.Lifecycle.PER_METHOD)</code>.</p></div>
 <p></p>
 <p>The following diagram illustrates the method call sequence:</p>
 <p><picture><img alt="method call sequence" height="1088" src="https://ucarecdn.com/392e5aad-bafe-4341-8095-d947b810514c/" width="1474"/></picture></p>
