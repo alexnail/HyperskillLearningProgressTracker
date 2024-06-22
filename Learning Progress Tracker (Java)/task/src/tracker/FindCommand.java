@@ -18,9 +18,9 @@ public class FindCommand implements Command {
         while (!input.equalsIgnoreCase("back")) {
             Student student = dao.find(input);
             if (student != null) {
-                Points points = student.getPoints();
+                Submission total = student.getTotal();
                 System.out.printf("%s points: Java=%d; DSA=%d; Databases=%d; Spring=%d%n",
-                        student.getId(), points.java(), points.dsa(), points.dbs(), points.spring());
+                        student.getId(), total.java(), total.dsa(), total.dbs(), total.spring());
             } else {
                 System.out.printf("No student is found for id=%s.%n", input);
             }

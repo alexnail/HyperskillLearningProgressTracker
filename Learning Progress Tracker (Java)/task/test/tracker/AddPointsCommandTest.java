@@ -51,9 +51,9 @@ class AddPointsCommandTest {
         assertThat(students.get("10000").getPoints().dbs()).isEqualTo(7);
         assertThat(students.get("10000").getPoints().spring()).isEqualTo(7);*/
 
-        assertThat(students.get("10001").getPoints().java()).isEqualTo(15);
-        assertThat(students.get("10001").getPoints().dsa()).isEqualTo(18);
-        assertThat(students.get("10001").getPoints().dbs()).isEqualTo(12);
-        assertThat(students.get("10001").getPoints().spring()).isEqualTo(11);
+        assertThat(students.get("10001").getTotal().java()).isEqualTo(15);
+        assertThat(students.get("10001").getTotal().dsa()).isEqualTo(18);
+        assertThat(students.get("10001").getTotal().dbs()).isEqualTo(12);
+        assertThat(students.get("10001").getTotal().spring()).isEqualTo(11);
     }
 }

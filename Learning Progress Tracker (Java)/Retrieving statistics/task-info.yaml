@@ -48,7 +48,7 @@ files:
   - name: src/tracker/FindCommand.java
     visible: true
     learner_created: true
-  - name: src/tracker/Points.java
+  - name: src/tracker/Submission.java
     visible: true
     learner_created: true
   - name: src/tracker/StudentDAO.java
@@ -67,6 +67,12 @@ files:
     visible: true
     learner_created: true
   - name: src/tracker/StatisticsCommand.java
+    visible: true
+    learner_created: true
+  - name: src/tracker/StatisticsCalculator.java
+    visible: true
+    learner_created: true
+  - name: test/tracker/StatisticsCalculatorTest.java
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/14399#comment

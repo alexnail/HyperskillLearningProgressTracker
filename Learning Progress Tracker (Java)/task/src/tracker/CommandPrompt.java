@@ -19,6 +19,7 @@ public class CommandPrompt {
             case "list" -> new ListStudentsCommand();
             case "add points" -> new AddPointsCommand(scanner);
             case "find" -> new FindCommand(scanner);
+            case "statistics" -> new StatisticsCommand(scanner);
             case "" -> () -> {
                 System.out.println("No input.");
                 return false;

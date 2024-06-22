@@ -1,5 +1,7 @@
 package tracker;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Student {
@@ -7,7 +9,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private String email;
-    private Points points;
+    private List<Submission> submissions = new ArrayList<>();
 
     public static Student fromString(String input) {
         Student student = new Student();
@@ -54,11 +56,17 @@ public class Student {
         this.id = id;
     }
 
-    public void setPoints(Points points) {
-        this.points = points;
+    public void addSubmission(Submission submission) {
+        submissions.add(submission);
     }
 
-    public Points getPoints() {
-        return points;
+    public List<Submission> getSubmissions() {
+        return submissions;
+    }
+
+    public Submission getTotal() {
+        return submissions.stream()
+                .reduce(Submission::add)
+                .orElse(Submission.empty());
     }
 }

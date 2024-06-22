@@ -19,4 +19,14 @@ class StudentTest {
         assertThat(student.getLastName()).isEqualTo(lastName);
         assertThat(student.getEmail()).isEqualTo(email);
     }
+
+    @Test
+    void getTotal() {
+        Student student = new Student();
+        student.setId("1234");
+        student.addSubmission(new Submission(1, 2, 3, 4));
+        student.addSubmission(new Submission(5, 6, 7, 8));
+
+        assertThat(student.getTotal()).isEqualTo(new Submission(6, 8, 10, 12));
+    }
 }

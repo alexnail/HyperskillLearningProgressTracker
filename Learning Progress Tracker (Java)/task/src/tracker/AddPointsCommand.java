@@ -43,9 +43,7 @@ public class AddPointsCommand implements Command {
                     throw new NumberFormatException();
                 }
 
-                Points points = student.getPoints();
-                Points plus = new Points(java, dsa, dbs, spring);
-                student.setPoints(points == null ? plus : points.add(plus));
+                student.addSubmission(new Submission(java, dsa, dbs, spring));
                 dao.update(student);
                 System.out.println("Points updated.");
             } catch (NumberFormatException e) {
