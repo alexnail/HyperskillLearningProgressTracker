@@ -54,11 +54,11 @@ public class StatisticsCommand implements Command {
         }
         return switch (statistics) {
             case MOST_POPULAR -> StatisticsCalculator.mostPopular(dao.findAll());
-            case LEAST_POPULAR -> "n/a";
-            case HIGHEST_ACTIVITY -> "n/a";
-            case LOWEST_ACTIVITY -> "n/a";
-            case EASIEST_COURSE -> "n/a";
-            case HARDEST_COURSE -> "n/a";
+            case LEAST_POPULAR -> StatisticsCalculator.leastPopular(dao.findAll());
+            case HIGHEST_ACTIVITY -> StatisticsCalculator.highestActivity(dao.findAll());
+            case LOWEST_ACTIVITY -> StatisticsCalculator.lowestActivity(dao.findAll());
+            case EASIEST_COURSE -> StatisticsCalculator.easiestCourse(dao.findAll());
+            case HARDEST_COURSE -> StatisticsCalculator.hardestCourse(dao.findAll());
         };
     }
 }
