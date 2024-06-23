@@ -72,10 +72,10 @@ public class Student {
 
     public int getPoints(String input) {
         Submission total = getTotal();
-        return switch (input) {
+        return switch (input.toLowerCase()) {
             case "java" -> total.java();
             case "dsa" -> total.dsa();
-            case "dbs" -> total.dbs();
+            case "databases" -> total.dbs();
             case "spring" -> total.spring();
             default -> 0;
         };

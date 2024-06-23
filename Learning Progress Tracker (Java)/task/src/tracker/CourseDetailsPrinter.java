@@ -2,6 +2,7 @@ package tracker;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -35,10 +36,12 @@ public class CourseDetailsPrinter {
                                     .scaleByPowerOfTen(2);
                             return new Course(input, s.getId(), points, completed.doubleValue());
                         }
-                ).toList();
+                )
+                .sorted(Comparator.comparing(Course::points).reversed().thenComparing(Course::studentId))
+                .toList();
 
         for (Course course : courses) {
-            System.out.println("%s\t%s\t%.2f%%".formatted(course.studentId(), course.points(), course.completed()));
+            System.out.println("%s\t%s\t%.1f%%".formatted(course.studentId(), course.points(), course.completed()));
         }
     }
 
