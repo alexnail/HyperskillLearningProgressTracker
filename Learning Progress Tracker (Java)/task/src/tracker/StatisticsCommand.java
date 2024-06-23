@@ -1,14 +1,12 @@
 package tracker;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Map;
+import java.util.List;
 import java.util.Scanner;
 
 import static tracker.Statistics.*;
 
 public class StatisticsCommand implements Command {
-    private final static String[] COURSES = {"java", "dsa", "databases", "spring"};
+
 
     private final Scanner scanner;
 
@@ -25,9 +23,6 @@ public class StatisticsCommand implements Command {
 
         String input = scanner.nextLine();
         while (!input.equalsIgnoreCase("back")) {
-            if (!Arrays.asList(COURSES).contains(input.toLowerCase())) {
-                System.out.println("Unknown course.");
-            }
             printCourseDetails(input);
 
             input = scanner.nextLine();
@@ -36,7 +31,7 @@ public class StatisticsCommand implements Command {
     }
 
     private void printCourseDetails(String input) {
-
+        CourseDetailsPrinter.print(input);
     }
 
     private void printStatistics() {
@@ -52,14 +47,19 @@ public class StatisticsCommand implements Command {
         if (dao.size() == 0) {
             return "n/a";
         }
-        return switch (statistics) {
-            case MOST_POPULAR -> StatisticsCalculator.mostPopular(dao.findAll());
-            case LEAST_POPULAR -> StatisticsCalculator.leastPopular(dao.findAll());
-            case HIGHEST_ACTIVITY -> StatisticsCalculator.highestActivity(dao.findAll());
-            case LOWEST_ACTIVITY -> StatisticsCalculator.lowestActivity(dao.findAll());
-            case EASIEST_COURSE -> StatisticsCalculator.easiestCourse(dao.findAll());
-            case HARDEST_COURSE -> StatisticsCalculator.hardestCourse(dao.findAll());
+        StatisticsCalculator calculator = StatisticsCalculator.get(dao);
+        List<String> list = switch (statistics) {
+            case MOST_POPULAR -> calculator.mostPopular();
+            case LEAST_POPULAR -> calculator.leastPopular();
+            case HIGHEST_ACTIVITY -> calculator.highestActivity();
+            case LOWEST_ACTIVITY -> calculator.lowestActivity();
+            case EASIEST_COURSE -> calculator.easiestCourse();
+            case HARDEST_COURSE -> calculator.hardestCourse();
         };
+        return join(list);
+    }
+    private String join(List<String> list) {
+        return list.isEmpty() ? "n/a" : String.join(", ", list);
     }
 }
 

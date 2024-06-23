@@ -9,49 +9,65 @@ import java.util.stream.Stream;
 
 public class StatisticsCalculator {
 
-    public static String mostPopular(Map<String, Student> all) {
-        Submission enrolled = getEnrolled(all);
+    private StudentDAO dao;
+
+    private static StatisticsCalculator instance;
+
+    public static StatisticsCalculator get(StudentDAO dao) {
+        if (instance == null) {
+            instance = new StatisticsCalculator();
+        }
+        instance.dao = dao;
+        return instance;
+    }
+
+    public List<String> mostPopular() {
+        Submission enrolled = getEnrolled(dao.findAll());
         int max = Stream.of(enrolled.java(), enrolled.dsa(), enrolled.dbs(), enrolled.spring())
                 .max(Integer::compare).orElse(0);
-        return buildString(max, enrolled);
+        return toList(max, enrolled);
     }
 
-    public static String leastPopular(Map<String, Student> all) {
-        Submission enrolled = getEnrolled(all);
+    public List<String> leastPopular() {
+        Submission enrolled = getEnrolled(dao.findAll());
         int min = Stream.of(enrolled.java(), enrolled.dsa(), enrolled.dbs(), enrolled.spring())
                 .min(Integer::compare).orElse(0);
-        return buildString(min, enrolled);
+        return toList(min, enrolled).stream()
+                .filter(it-> !mostPopular().contains(it))
+                .toList();
     }
 
-    public static String highestActivity(Map<String, Student> all) {
-        Submission submissions = getSubmissions(all);
+    public List<String> highestActivity() {
+        Submission submissions = getSubmissions(dao.findAll());
         int max = Stream.of(submissions.java(), submissions.dsa(), submissions.dbs(), submissions.spring())
                 .max(Integer::compare).orElse(0);
-        return buildString(max, submissions);
+        return toList(max, submissions);
     }
 
-    public static String lowestActivity(Map<String, Student> all) {
-        Submission submissions = getSubmissions(all);
+    public List<String> lowestActivity() {
+        Submission submissions = getSubmissions(dao.findAll());
         int min = Stream.of(submissions.java(), submissions.dsa(), submissions.dbs(), submissions.spring())
                 .min(Integer::compare).orElse(0);
-        return buildString(min, submissions);
+        return toList(min, submissions).stream()
+                .filter(it -> !highestActivity().contains(it))
+                .toList();
     }
 
-    public static String easiestCourse(Map<String, Student> all) {
-        Submission averages = getAverages(all);
+    public List<String> easiestCourse() {
+        Submission averages = getAverages(dao.findAll());
         Integer max = Stream.of(averages.java(), averages.dsa(), averages.dbs(), averages.spring())
                 .max(Integer::compare).orElse(0);
-        return buildString(max, averages);
+        return toList(max, averages);
     }
 
-    public static String hardestCourse(Map<String, Student> all) {
-        Submission averages = getAverages(all);
+    public List<String> hardestCourse() {
+        Submission averages = getAverages(dao.findAll());
         Integer min = Stream.of(averages.java(), averages.dsa(), averages.dbs(), averages.spring())
                 .min(Integer::compare).orElse(0);
-        return buildString(min, averages);
+        return toList(min, averages);
     }
 
-    private static Submission getEnrolled(Map<String, Student> all) {
+    private Submission getEnrolled(Map<String, Student> all) {
         return all.values().stream()
                 .map(Student::getTotal)
                 .map(ts -> {
@@ -66,7 +82,7 @@ public class StatisticsCalculator {
                 .orElse(Submission.empty());
     }
 
-    private static Submission getSubmissions(Map<String, Student> all) {
+    private Submission getSubmissions(Map<String, Student> all) {
         return all.values().stream()
                 .flatMap(student -> student.getSubmissions().stream())
                 .map(ts -> {
@@ -81,23 +97,7 @@ public class StatisticsCalculator {
                 .orElse(Submission.empty());
     }
 
-    private static Submission getAverages(Map<String, Student> all) {
-        /*DoubleSummaryStatistics javaAvg = all.values().stream()
-                .map(Student::getTotal)
-                .collect(Collectors.summarizingDouble(Submission::java));
-
-        DoubleSummaryStatistics dsaAvg = all.values().stream()
-                .map(Student::getTotal)
-                .collect(Collectors.summarizingDouble(Submission::dsa));
-
-        DoubleSummaryStatistics dbsAvg = all.values().stream()
-                .map(Student::getTotal)
-                .collect(Collectors.summarizingDouble(Submission::dbs));
-
-        DoubleSummaryStatistics springAvg = all.values().stream()
-                .map(Student::getTotal)
-                .collect(Collectors.summarizingDouble(Submission::spring));*/
-
+    private Submission getAverages(Map<String, Student> all) {
         DoubleSummaryStatistics javaAvg = all.values().stream()
                 .flatMap(s -> s.getSubmissions().stream())
                 .collect(Collectors.summarizingDouble(Submission::java));
@@ -118,7 +118,7 @@ public class StatisticsCalculator {
                 (int)dbsAvg.getAverage(), (int)springAvg.getAverage());
     }
 
-    private static String buildString(int target, Submission enrolled) {
+    private List<String> toList(int target, Submission enrolled) {
         List<String> courses = new ArrayList<>();
         if (target == enrolled.java()) {
             courses.add("Java");
@@ -132,6 +132,6 @@ public class StatisticsCalculator {
         if (target == enrolled.spring()) {
             courses.add("Spring");
         }
-        return String.join(", ", courses);
+        return courses;
     }
 }

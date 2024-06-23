@@ -69,4 +69,15 @@ public class Student {
                 .reduce(Submission::add)
                 .orElse(Submission.empty());
     }
+
+    public int getPoints(String input) {
+        Submission total = getTotal();
+        return switch (input) {
+            case "java" -> total.java();
+            case "dsa" -> total.dsa();
+            case "dbs" -> total.dbs();
+            case "spring" -> total.spring();
+            default -> 0;
+        };
+    }
 }
