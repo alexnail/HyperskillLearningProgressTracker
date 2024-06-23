@@ -37,6 +37,7 @@ public class CourseDetailsPrinter {
                             return new Course(input, s.getId(), points, completed.doubleValue());
                         }
                 )
+                .filter(c -> c.points > 0)
                 .sorted(Comparator.comparing(Course::points).reversed().thenComparing(Course::studentId))
                 .toList();
 
