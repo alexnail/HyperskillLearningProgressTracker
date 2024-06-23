@@ -16,7 +16,7 @@ public class CourseDetailsPrinter {
         if (!COURSES.contains(input.toLowerCase())) {
             System.out.println("Unknown course.");
         } else {
-            printCourseTitle(input);
+            System.out.println(getCourseTitle(input));
             printHeaders();
             printTopStudentDetails(input);
         }
@@ -52,12 +52,13 @@ public class CourseDetailsPrinter {
         System.out.println("%s\t%s\t%s".formatted("id", "points", "completed"));
     }
 
-    private static void printCourseTitle(String input) {
-        switch (input.toLowerCase()) {
-            case "java" -> System.out.println("Java");
-            case "dsa" -> System.out.println("DSA");
-            case "databases" -> System.out.println("Databases");
-            case "spring" -> System.out.println("Spring");
-        }
+    public static String getCourseTitle(String input) {
+        return switch (input.toLowerCase()) {
+            case "java" ->"Java";
+            case "dsa" -> "DSA";
+            case "databases" -> "Databases";
+            case "spring" -> "Spring";
+            default -> input;
+        };
     }
 }

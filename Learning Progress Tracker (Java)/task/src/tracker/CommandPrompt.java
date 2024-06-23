@@ -20,6 +20,7 @@ public class CommandPrompt {
             case "add points" -> new AddPointsCommand(scanner);
             case "find" -> new FindCommand(scanner);
             case "statistics" -> new StatisticsCommand(scanner);
+            case "notify" -> new NotifyCommand();
             case "" -> () -> {
                 System.out.println("No input.");
                 return false;
